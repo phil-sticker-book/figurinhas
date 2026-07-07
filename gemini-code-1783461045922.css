@@ -1,0 +1,146 @@
+/* --- Basic Reset and Font --- */
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #f0f0f0; /* Classic grey album background */
+    color: #333;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* --- The Main Grid --- */
+.album-grid {
+    display: grid;
+    /* This creates a flexible grid. Each card is min 250px wide, max 1fr. */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- The Card and the Flip Core --- */
+.card-container {
+    background-color: transparent;
+    width: 100%;
+    /* Keep the aspect ratio consistent (e.g., 4:5 vertical) */
+    aspect-ratio: 4 / 5; 
+    perspective: 1000px; /* Required for 3D effect */
+}
+
+/* The element that actually flips */
+.card-flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s ease-out; /* The speed of the flip */
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-radius: 8px; /* Classic sticker corners */
+}
+
+/* A simple class that JavaScript adds to initiate the flip */
+.card-container.is-flipped .card-flip-inner {
+    transform: rotateY(180deg);
+}
+
+/* Front and Back common styles */
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Hide the face when flipped */
+    backface-visibility: hidden;
+    border-radius: 8px;
+    overflow: hidden; /* Ensure content stays inside */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Push text/button down on front */
+    border: 3px solid white; /* Essential "sticker" border */
+}
+
+/* --- Front Side Styling --- */
+.card-front {
+    background-color: #fff;
+    cursor: pointer; /* Change cursor on hover */
+}
+
+.card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crop the image to fill the card */
+}
+
+.card-front h3 {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    margin: 0;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6); /* Text overlay for readability */
+    padding: 5px 0;
+    font-size: 1.1rem;
+}
+
+/* --- Back Side Styling (The Revealed Bio) --- */
+.card-back {
+    background-color: #fdfdfd;
+    transform: rotateY(180deg); /* Start the back already flipped */
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Stack info top-down */
+}
+
+.card-back h2 {
+    margin-top: 0;
+    font-size: 1.4rem;
+}
+
+.card-back p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    flex-grow: 1; /* Allow the paragraph to occupy space */
+}
+
+.card-back img {
+    width: 100%;
+    height: 150px; /* Small inset photo */
+    object-fit: cover;
+    margin-top: auto;
+    border-radius: 4px;
+}
+
+/* The specific "reveal box" text box style you requested */
+.text-explanation-box {
+    background: #eefbff;
+    border: 2px solid #bdeaff;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+/* --- The Close Button --- */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #999;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+    padding: 0 5px;
+    z-index: 10; /* Ensure button stays on top */
+}
+
+.close-btn:hover {
+    color: #333;
+}
