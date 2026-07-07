@@ -1,6 +1,6 @@
 // 1. DATA: The master list of your 14 friends matching your PNG filenames
 const friendsData = [
-    { id: "card-andre", name: "André", img: "images/card-andre.png", bio: "Insert story here about André..." },
+    { id: "card-andre", name: "Andre", img: "images/card-andre.png", bio: "Insert story here about André..." },
     { id: "card-andy", name: "Andy", img: "images/card-andy.png", bio: "Insert story here about Andy..." },
     { id: "card-bernardo", name: "Bernardo", img: "images/card-bernardo.png", bio: "Insert story here about Bernardo..." },
     { id: "card-bianca", name: "Bianca", img: "images/card-bianca.png", bio: "Insert story here about Bianca..." },
@@ -10,7 +10,7 @@ const friendsData = [
     { id: "card-dom", name: "Dom", img: "images/card-dom.png", bio: "Insert story here about Dom..." },
     { id: "card-edgar", name: "Edgar", img: "images/card-edgar.png", bio: "Insert story here about Edgar..." },
     { id: "card-emma", name: "Emma", img: "images/card-emma.png", bio: "Insert story here about Emma..." },
-    { id: "card-estevao", name: "Estevão", img: "images/card-estevao.png", bio: "Insert story here about Estevão..." },
+    { id: "card-estevao", name: "Aquele-que-não-deve-ser-nomeado", img: "images/card-estevao.png", bio: "Insert story here about Estevão..." },
     { id: "card-mateus", name: "Mateus", img: "images/card-mateus.png", bio: "Insert story here about Mateus..." },
     { id: "card-matthew", name: "Matthew", img: "images/card-matthew.png", bio: "Insert story here about Matthew..." },
     { id: "card-sam", name: "Sam", img: "images/card-sam.png", bio: "Insert story here about Sam..." }
